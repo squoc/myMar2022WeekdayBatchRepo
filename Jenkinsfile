@@ -2,13 +2,8 @@ pipeline {
     agent any
     
     stages {
-        stage('checkout-scm') {
-            steps {
-                build job: 'checkout-scm'
-            }
-        }
         
-        stage('build') {
+        stage('build & package') {
             steps {
                 build job: 'maven-build'
             }
